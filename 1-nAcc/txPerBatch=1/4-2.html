@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+<head>
+    <title>Caliper Report</title>
+    <meta charset="UTF-8"/>
+    <style type="text/css">
+        .left-column {
+            position: fixed;
+            width:20%;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -khtml-border-radius: 5px;
+        }
+        .right-column {
+            margin-left: 22%;
+            width:60%;
+        }
+        .left-column ul,h2 {
+            display: block;
+            margin: 10px;
+            padding: 0;
+            list-style: none;
+        }
+        .left-column ul{
+            border-top: 1px solid #d9d9d9;
+            font-size: 14px;
+        }
+        .left-column li{
+            margin-bottom: 5px;
+            color: #5e6b73;
+        }
+        .left-column h3 {
+            border-left: 5px solid #009a61;
+        }
+        .right-column>div {
+            border-top: 1px solid #d9d9d9;
+        }
+        .right-column table {
+            font-family: verdana,arial,sans-serif;
+            font-size:11px;
+            color:#333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        .right-column th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #f2f2f2;
+        }
+        .right-column td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+        }
+        .tag {
+            display: inline-block;
+            margin-bottom: 10px;
+            padding: 5px 10px;
+            background-color: rgba(1,126,102,0.08);
+            font-family: verdana,arial,sans-serif;
+            font-size:11px;
+            color: #017E66;
+            text-align: center;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -khtml-border-radius: 5px;
+        }
+        pre {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -khtml-border-radius: 5px;
+            overflow:auto;
+            max-height:300px;
+            font-size:12px;
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <div class="left-column">
+        <h2>Caliper Report</h2>
+        <ul>
+            <h3>&nbspBasic information</h3>
+            <li><strong>DLT: &nbsp</strong><span>fabric</span></li>
+            <li><strong>Benchmark: &nbsp</strong><span>smallbank</span></li>
+            <li><strong>Description: &nbsp</strong><span>This is smallbank benchmark for caliper</span></li>
+            <li><strong>Test Rounds: &nbsp</strong><span>2</span></li>
+            <li><a href="#benchmarkInfo">Details</a></li>
+        </ul>
+        <ul>
+            <h3>&nbspBenchmark results</h3>
+            <li><a href="#benchmarksummary">Summary</a></li>
+            <li><a href="#round 0">round 0</a></li>
+            <li><a href="#round 1">round 1</a></li>
+        </ul>
+        <ul>
+            <h3>&nbspSystem Under Test</h3>
+            <li><strong>Version: &nbsp</strong><span>1.0.5</span></li>
+            <li><strong>Size: &nbsp</strong><span>4 Peers</span></li>
+            <li><strong>Orderer: &nbsp</strong><span>Solo</span></li>
+            <li><strong>Distribution: &nbsp</strong><span>Single Host</span></li>
+            <li><a href="#sutdetails">Details</a></li>
+        </ul>
+    </div>
+
+    <div class="right-column">
+        <div id="benchmarksummary">
+            <table>
+                <h3>Summary</h3>
+                <tr>
+                     <th>Test</th> <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate</th> <th>Max Latency</th> <th>Min Latency</th> <th>Avg Latency</th> <th>Throughput</th> <th>Details</th>
+                </tr>
+
+                <tr>
+                     <td>1</td> <td>smallOperations</td> <td>10000</td> <td>0</td> <td>296 tps</td> <td>32.46 s</td> <td>3.15 s</td> <td>20.75 s</td> <td>215 tps</td> <td>{&quot;trans&quot;:[&quot;Submitted:0 Succ:0 Fail:0 Unfinished:0&quot;,&quot;Submitted:0 Succ:0 Fail:0 Unfinished:0&quot;,&quot;Submitted:167 Succ:0 Fail:0 Unfinished:167&quot;,&quot;Submitted:167 Succ:0 Fail:0 Unfinished:167&quot;,&quot;Submitted:644 Succ:0 Fail:0 Unfinished:644&quot;,&quot;Submitted:963 Succ:0 Fail:0 Unfinished:963&quot;,&quot;Submitted:1362 Succ:137 Fail:0 Unfinished:1225&quot;,&quot;Submitted:1362 Succ:137 Fail:0 Unfinished:1225&quot;,&quot;Submitted:1935 Succ:292 Fail:0 Unfinished:1643&quot;,&quot;Submitted:2258 Succ:292 Fail:0 Unfinished:1966&quot;,&quot;Submitted:2585 Succ:433 Fail:0 Unfinished:2152&quot;,&quot;Submitted:2585 Succ:433 Fail:0 Unfinished:2152&quot;,&quot;Submitted:3186 Succ:633 Fail:0 Unfinished:2553&quot;,&quot;Submitted:3550 Succ:633 Fail:0 Unfinished:2917&quot;,&quot;Submitted:3550 Succ:633 Fail:0 Unfinished:2917&quot;,&quot;Submitted:3849 Succ:901 Fail:0 Unfinished:2948&quot;,&quot;Submitted:4458 Succ:901 Fail:0 Unfinished:3557&quot;,&quot;Submitted:4458 Succ:901 Fail:0 Unfinished:3557&quot;,&quot;Submitted:5044 Succ:1085 Fail:0 Unfinished:3959&quot;,&quot;Submitted:5044 Succ:1085 Fail:0 Unfinished:3959&quot;,&quot;Submitted:5547 Succ:1267 Fail:0 Unfinished:4280&quot;,&quot;Submitted:5920 Succ:1456 Fail:0 Unfinished:4464&quot;,&quot;Submitted:5920 Succ:1456 Fail:0 Unfinished:4464&quot;,&quot;Submitted:6582 Succ:1655 Fail:0 Unfinished:4927&quot;,&quot;Submitted:6582 Succ:1655 Fail:0 Unfinished:4927&quot;,&quot;Submitted:7170 Succ:1843 Fail:0 Unfinished:5327&quot;,&quot;Submitted:7486 Succ:1843 Fail:0 Unfinished:5643&quot;,&quot;Submitted:7486 Succ:1843 Fail:0 Unfinished:5643&quot;,&quot;Submitted:7984 Succ:2031 Fail:0 Unfinished:5953&quot;,&quot;Submitted:7984 Succ:2031 Fail:0 Unfinished:5953&quot;,&quot;Submitted:8537 Succ:2031 Fail:0 Unfinished:6506&quot;,&quot;Submitted:8951 Succ:2031 Fail:0 Unfinished:6920&quot;,&quot;Submitted:8951 Succ:2031 Fail:0 Unfinished:6920&quot;,&quot;Submitted:9501 Succ:2304 Fail:0 Unfinished:7197&quot;,&quot;Submitted:9866 Succ:2304 Fail:0 Unfinished:7562&quot;,&quot;Submitted:9866 Succ:2304 Fail:0 Unfinished:7562&quot;,&quot;Submitted:10000 Succ:2470 Fail:0 Unfinished:7530&quot;,&quot;Submitted:10000 Succ:2754 Fail:0 Unfinished:7246&quot;,&quot;Submitted:10000 Succ:2754 Fail:0 Unfinished:7246&quot;,&quot;Submitted:10000 Succ:3127 Fail:0 Unfinished:6873&quot;,&quot;Submitted:10000 Succ:3127 Fail:0 Unfinished:6873&quot;,&quot;Submitted:10000 Succ:3351 Fail:0 Unfinished:6649&quot;,&quot;Submitted:10000 Succ:3575 Fail:0 Unfinished:6425&quot;,&quot;Submitted:10000 Succ:3742 Fail:0 Unfinished:6258&quot;,&quot;Submitted:10000 Succ:4018 Fail:0 Unfinished:5982&quot;,&quot;Submitted:10000 Succ:4140 Fail:0 Unfinished:5860&quot;,&quot;Submitted:10000 Succ:4520 Fail:0 Unfinished:5480&quot;,&quot;Submitted:10000 Succ:9861 Fail:0 Unfinished:139&quot;,&quot;Submitted:10000 Succ:10000 Fail:0 Unfinished:0&quot;]}</td>
+                </tr>
+                <tr>
+                     <td>2</td> <td>smallOperations</td> <td>10000</td> <td>0</td> <td>297 tps</td> <td>27.05 s</td> <td>2.20 s</td> <td>17.16 s</td> <td>232 tps</td> <td>{&quot;trans&quot;:[&quot;Submitted:0 Succ:0 Fail:0 Unfinished:0&quot;,&quot;Submitted:0 Succ:0 Fail:0 Unfinished:0&quot;,&quot;Submitted:167 Succ:0 Fail:0 Unfinished:167&quot;,&quot;Submitted:167 Succ:0 Fail:0 Unfinished:167&quot;,&quot;Submitted:644 Succ:0 Fail:0 Unfinished:644&quot;,&quot;Submitted:963 Succ:0 Fail:0 Unfinished:963&quot;,&quot;Submitted:1362 Succ:137 Fail:0 Unfinished:1225&quot;,&quot;Submitted:1362 Succ:137 Fail:0 Unfinished:1225&quot;,&quot;Submitted:1935 Succ:292 Fail:0 Unfinished:1643&quot;,&quot;Submitted:2258 Succ:292 Fail:0 Unfinished:1966&quot;,&quot;Submitted:2585 Succ:433 Fail:0 Unfinished:2152&quot;,&quot;Submitted:2585 Succ:433 Fail:0 Unfinished:2152&quot;,&quot;Submitted:3186 Succ:633 Fail:0 Unfinished:2553&quot;,&quot;Submitted:3550 Succ:633 Fail:0 Unfinished:2917&quot;,&quot;Submitted:3550 Succ:633 Fail:0 Unfinished:2917&quot;,&quot;Submitted:3849 Succ:901 Fail:0 Unfinished:2948&quot;,&quot;Submitted:4458 Succ:901 Fail:0 Unfinished:3557&quot;,&quot;Submitted:4458 Succ:901 Fail:0 Unfinished:3557&quot;,&quot;Submitted:5044 Succ:1085 Fail:0 Unfinished:3959&quot;,&quot;Submitted:5044 Succ:1085 Fail:0 Unfinished:3959&quot;,&quot;Submitted:5547 Succ:1267 Fail:0 Unfinished:4280&quot;,&quot;Submitted:5920 Succ:1456 Fail:0 Unfinished:4464&quot;,&quot;Submitted:5920 Succ:1456 Fail:0 Unfinished:4464&quot;,&quot;Submitted:6582 Succ:1655 Fail:0 Unfinished:4927&quot;,&quot;Submitted:6582 Succ:1655 Fail:0 Unfinished:4927&quot;,&quot;Submitted:7170 Succ:1843 Fail:0 Unfinished:5327&quot;,&quot;Submitted:7486 Succ:1843 Fail:0 Unfinished:5643&quot;,&quot;Submitted:7486 Succ:1843 Fail:0 Unfinished:5643&quot;,&quot;Submitted:7984 Succ:2031 Fail:0 Unfinished:5953&quot;,&quot;Submitted:7984 Succ:2031 Fail:0 Unfinished:5953&quot;,&quot;Submitted:8537 Succ:2031 Fail:0 Unfinished:6506&quot;,&quot;Submitted:8951 Succ:2031 Fail:0 Unfinished:6920&quot;,&quot;Submitted:8951 Succ:2031 Fail:0 Unfinished:6920&quot;,&quot;Submitted:9501 Succ:2304 Fail:0 Unfinished:7197&quot;,&quot;Submitted:9866 Succ:2304 Fail:0 Unfinished:7562&quot;,&quot;Submitted:9866 Succ:2304 Fail:0 Unfinished:7562&quot;,&quot;Submitted:10000 Succ:2470 Fail:0 Unfinished:7530&quot;,&quot;Submitted:10000 Succ:2754 Fail:0 Unfinished:7246&quot;,&quot;Submitted:10000 Succ:2754 Fail:0 Unfinished:7246&quot;,&quot;Submitted:10000 Succ:3127 Fail:0 Unfinished:6873&quot;,&quot;Submitted:10000 Succ:3127 Fail:0 Unfinished:6873&quot;,&quot;Submitted:10000 Succ:3351 Fail:0 Unfinished:6649&quot;,&quot;Submitted:10000 Succ:3575 Fail:0 Unfinished:6425&quot;,&quot;Submitted:10000 Succ:3742 Fail:0 Unfinished:6258&quot;,&quot;Submitted:10000 Succ:4018 Fail:0 Unfinished:5982&quot;,&quot;Submitted:10000 Succ:4140 Fail:0 Unfinished:5860&quot;,&quot;Submitted:10000 Succ:4520 Fail:0 Unfinished:5480&quot;,&quot;Submitted:10000 Succ:9861 Fail:0 Unfinished:139&quot;,&quot;Submitted:10000 Succ:10000 Fail:0 Unfinished:0&quot;,&quot;Submitted:10000 Succ:10000 Fail:0 Unfinished:0&quot;,&quot;Submitted:10000 Succ:10000 Fail:0 Unfinished:0&quot;,&quot;Submitted:10000 Succ:10000 Fail:0 Unfinished:0&quot;,&quot;Submitted:10000 Succ:10000 Fail:0 Unfinished:0&quot;,&quot;Submitted:10000 Succ:10000 Fail:0 Unfinished:0&quot;,&quot;Submitted:10000 Succ:10000 Fail:0 Unfinished:0&quot;,&quot;Submitted:10313 Succ:10000 Fail:0 Unfinished:313&quot;,&quot;Submitted:10630 Succ:10000 Fail:0 Unfinished:630&quot;,&quot;Submitted:10986 Succ:10218 Fail:0 Unfinished:768&quot;,&quot;Submitted:10986 Succ:10218 Fail:0 Unfinished:768&quot;,&quot;Submitted:11430 Succ:10218 Fail:0 Unfinished:1212&quot;,&quot;Submitted:11803 Succ:10449 Fail:0 Unfinished:1354&quot;,&quot;Submitted:11803 Succ:10449 Fail:0 Unfinished:1354&quot;,&quot;Submitted:12336 Succ:10630 Fail:0 Unfinished:1706&quot;,&quot;Submitted:12921 Succ:10630 Fail:0 Unfinished:2291&quot;,&quot;Submitted:12921 Succ:10630 Fail:0 Unfinished:2291&quot;,&quot;Submitted:13478 Succ:10986 Fail:0 Unfinished:2492&quot;,&quot;Submitted:13478 Succ:10986 Fail:0 Unfinished:2492&quot;,&quot;Submitted:14023 Succ:11251 Fail:0 Unfinished:2772&quot;,&quot;Submitted:14023 Succ:11251 Fail:0 Unfinished:2772&quot;,&quot;Submitted:14632 Succ:11477 Fail:0 Unfinished:3155&quot;,&quot;Submitted:14632 Succ:11477 Fail:0 Unfinished:3155&quot;,&quot;Submitted:15202 Succ:11477 Fail:0 Unfinished:3725&quot;,&quot;Submitted:15202 Succ:11477 Fail:0 Unfinished:3725&quot;,&quot;Submitted:15756 Succ:11813 Fail:0 Unfinished:3943&quot;,&quot;Submitted:16298 Succ:11972 Fail:0 Unfinished:4326&quot;,&quot;Submitted:16298 Succ:11972 Fail:0 Unfinished:4326&quot;,&quot;Submitted:16634 Succ:11972 Fail:0 Unfinished:4662&quot;,&quot;Submitted:17169 Succ:12218 Fail:0 Unfinished:4951&quot;,&quot;Submitted:17492 Succ:12218 Fail:0 Unfinished:5274&quot;,&quot;Submitted:17492 Succ:12218 Fail:0 Unfinished:5274&quot;,&quot;Submitted:18099 Succ:12456 Fail:0 Unfinished:5643&quot;,&quot;Submitted:18099 Succ:12456 Fail:0 Unfinished:5643&quot;,&quot;Submitted:18502 Succ:12621 Fail:0 Unfinished:5881&quot;,&quot;Submitted:18502 Succ:12621 Fail:0 Unfinished:5881&quot;,&quot;Submitted:19086 Succ:12621 Fail:0 Unfinished:6465&quot;,&quot;Submitted:19499 Succ:12621 Fail:0 Unfinished:6878&quot;,&quot;Submitted:19840 Succ:12994 Fail:0 Unfinished:6846&quot;,&quot;Submitted:20000 Succ:12994 Fail:0 Unfinished:7006&quot;,&quot;Submitted:20000 Succ:12994 Fail:0 Unfinished:7006&quot;,&quot;Submitted:20000 Succ:13510 Fail:0 Unfinished:6490&quot;,&quot;Submitted:20000 Succ:13510 Fail:0 Unfinished:6490&quot;,&quot;Submitted:20000 Succ:13764 Fail:0 Unfinished:6236&quot;,&quot;Submitted:20000 Succ:13764 Fail:0 Unfinished:6236&quot;,&quot;Submitted:20000 Succ:14159 Fail:0 Unfinished:5841&quot;,&quot;Submitted:20000 Succ:14159 Fail:0 Unfinished:5841&quot;,&quot;Submitted:20000 Succ:14559 Fail:0 Unfinished:5441&quot;,&quot;Submitted:20000 Succ:19701 Fail:0 Unfinished:299&quot;]}</td>
+                </tr>
+            </table>
+        </div>
+        <div id="round 0">
+            <h3>round 0&nbsp-&nbspsmallOperations</h3>
+            <strong class="tag">performance metrics</strong>
+            <table>
+                <tr>
+                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate</th> <th>Max Latency</th> <th>Min Latency</th> <th>Avg Latency</th> <th>Throughput</th> <th>Details</th>
+                </tr>
+                <tr>
+                     <td>smallOperations</td> <td>10000</td> <td>0</td> <td>296 tps</td> <td>32.46 s</td> <td>3.15 s</td> <td>20.75 s</td> <td>215 tps</td> <td>{&quot;trans&quot;:[&quot;Submitted:0 Succ:0 Fail:0 Unfinished:0&quot;,&quot;Submitted:0 Succ:0 Fail:0 Unfinished:0&quot;,&quot;Submitted:167 Succ:0 Fail:0 Unfinished:167&quot;,&quot;Submitted:167 Succ:0 Fail:0 Unfinished:167&quot;,&quot;Submitted:644 Succ:0 Fail:0 Unfinished:644&quot;,&quot;Submitted:963 Succ:0 Fail:0 Unfinished:963&quot;,&quot;Submitted:1362 Succ:137 Fail:0 Unfinished:1225&quot;,&quot;Submitted:1362 Succ:137 Fail:0 Unfinished:1225&quot;,&quot;Submitted:1935 Succ:292 Fail:0 Unfinished:1643&quot;,&quot;Submitted:2258 Succ:292 Fail:0 Unfinished:1966&quot;,&quot;Submitted:2585 Succ:433 Fail:0 Unfinished:2152&quot;,&quot;Submitted:2585 Succ:433 Fail:0 Unfinished:2152&quot;,&quot;Submitted:3186 Succ:633 Fail:0 Unfinished:2553&quot;,&quot;Submitted:3550 Succ:633 Fail:0 Unfinished:2917&quot;,&quot;Submitted:3550 Succ:633 Fail:0 Unfinished:2917&quot;,&quot;Submitted:3849 Succ:901 Fail:0 Unfinished:2948&quot;,&quot;Submitted:4458 Succ:901 Fail:0 Unfinished:3557&quot;,&quot;Submitted:4458 Succ:901 Fail:0 Unfinished:3557&quot;,&quot;Submitted:5044 Succ:1085 Fail:0 Unfinished:3959&quot;,&quot;Submitted:5044 Succ:1085 Fail:0 Unfinished:3959&quot;,&quot;Submitted:5547 Succ:1267 Fail:0 Unfinished:4280&quot;,&quot;Submitted:5920 Succ:1456 Fail:0 Unfinished:4464&quot;,&quot;Submitted:5920 Succ:1456 Fail:0 Unfinished:4464&quot;,&quot;Submitted:6582 Succ:1655 Fail:0 Unfinished:4927&quot;,&quot;Submitted:6582 Succ:1655 Fail:0 Unfinished:4927&quot;,&quot;Submitted:7170 Succ:1843 Fail:0 Unfinished:5327&quot;,&quot;Submitted:7486 Succ:1843 Fail:0 Unfinished:5643&quot;,&quot;Submitted:7486 Succ:1843 Fail:0 Unfinished:5643&quot;,&quot;Submitted:7984 Succ:2031 Fail:0 Unfinished:5953&quot;,&quot;Submitted:7984 Succ:2031 Fail:0 Unfinished:5953&quot;,&quot;Submitted:8537 Succ:2031 Fail:0 Unfinished:6506&quot;,&quot;Submitted:8951 Succ:2031 Fail:0 Unfinished:6920&quot;,&quot;Submitted:8951 Succ:2031 Fail:0 Unfinished:6920&quot;,&quot;Submitted:9501 Succ:2304 Fail:0 Unfinished:7197&quot;,&quot;Submitted:9866 Succ:2304 Fail:0 Unfinished:7562&quot;,&quot;Submitted:9866 Succ:2304 Fail:0 Unfinished:7562&quot;,&quot;Submitted:10000 Succ:2470 Fail:0 Unfinished:7530&quot;,&quot;Submitted:10000 Succ:2754 Fail:0 Unfinished:7246&quot;,&quot;Submitted:10000 Succ:2754 Fail:0 Unfinished:7246&quot;,&quot;Submitted:10000 Succ:3127 Fail:0 Unfinished:6873&quot;,&quot;Submitted:10000 Succ:3127 Fail:0 Unfinished:6873&quot;,&quot;Submitted:10000 Succ:3351 Fail:0 Unfinished:6649&quot;,&quot;Submitted:10000 Succ:3575 Fail:0 Unfinished:6425&quot;,&quot;Submitted:10000 Succ:3742 Fail:0 Unfinished:6258&quot;,&quot;Submitted:10000 Succ:4018 Fail:0 Unfinished:5982&quot;,&quot;Submitted:10000 Succ:4140 Fail:0 Unfinished:5860&quot;,&quot;Submitted:10000 Succ:4520 Fail:0 Unfinished:5480&quot;,&quot;Submitted:10000 Succ:9861 Fail:0 Unfinished:139&quot;,&quot;Submitted:10000 Succ:10000 Fail:0 Unfinished:0&quot;]}</td>
+                </tr>
+            </table>
+            <strong class="tag">resource consumption</strong>
+            <table>
+                <tr>
+                     <th>TYPE</th> <th>NAME</th> <th>Memory(max)</th> <th>Memory(avg)</th> <th>CPU(max)</th> <th>CPU(avg)</th> <th>Traffic In</th> <th>Traffic Out</th>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>dev-peer0.org1.example.co...nk-v0</td> <td>10.5MB</td> <td>9.7MB</td> <td>11.29%</td> <td>5.76%</td> <td>16.2MB</td> <td>7.3MB</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>peer0.org1.example.com</td> <td>341.5MB</td> <td>178.0MB</td> <td>170.43%</td> <td>88.07%</td> <td>49.4MB</td> <td>58.4MB</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>orderer.example.com</td> <td>96.4MB</td> <td>61.4MB</td> <td>80.39%</td> <td>36.25%</td> <td>31.7MB</td> <td>33.0MB</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>ca_peerOrg1</td> <td>4.3MB</td> <td>4.3MB</td> <td>0.01%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>simplenetwork_ca_1</td> <td>4.2MB</td> <td>4.2MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>ca_peerOrg2</td> <td>4.2MB</td> <td>4.2MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>simplenetwork_peer_1</td> <td>0B</td> <td>0B</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>-</td>
+                </tr>
+            </table>
+        </div>
+        <div id="round 1">
+            <h3>round 1&nbsp-&nbspsmallOperations</h3>
+            <strong class="tag">performance metrics</strong>
+            <table>
+                <tr>
+                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate</th> <th>Max Latency</th> <th>Min Latency</th> <th>Avg Latency</th> <th>Throughput</th> <th>Details</th>
+                </tr>
+                <tr>
+                     <td>smallOperations</td> <td>10000</td> <td>0</td> <td>297 tps</td> <td>27.05 s</td> <td>2.20 s</td> <td>17.16 s</td> <td>232 tps</td> <td>{&quot;trans&quot;:[&quot;Submitted:0 Succ:0 Fail:0 Unfinished:0&quot;,&quot;Submitted:0 Succ:0 Fail:0 Unfinished:0&quot;,&quot;Submitted:167 Succ:0 Fail:0 Unfinished:167&quot;,&quot;Submitted:167 Succ:0 Fail:0 Unfinished:167&quot;,&quot;Submitted:644 Succ:0 Fail:0 Unfinished:644&quot;,&quot;Submitted:963 Succ:0 Fail:0 Unfinished:963&quot;,&quot;Submitted:1362 Succ:137 Fail:0 Unfinished:1225&quot;,&quot;Submitted:1362 Succ:137 Fail:0 Unfinished:1225&quot;,&quot;Submitted:1935 Succ:292 Fail:0 Unfinished:1643&quot;,&quot;Submitted:2258 Succ:292 Fail:0 Unfinished:1966&quot;,&quot;Submitted:2585 Succ:433 Fail:0 Unfinished:2152&quot;,&quot;Submitted:2585 Succ:433 Fail:0 Unfinished:2152&quot;,&quot;Submitted:3186 Succ:633 Fail:0 Unfinished:2553&quot;,&quot;Submitted:3550 Succ:633 Fail:0 Unfinished:2917&quot;,&quot;Submitted:3550 Succ:633 Fail:0 Unfinished:2917&quot;,&quot;Submitted:3849 Succ:901 Fail:0 Unfinished:2948&quot;,&quot;Submitted:4458 Succ:901 Fail:0 Unfinished:3557&quot;,&quot;Submitted:4458 Succ:901 Fail:0 Unfinished:3557&quot;,&quot;Submitted:5044 Succ:1085 Fail:0 Unfinished:3959&quot;,&quot;Submitted:5044 Succ:1085 Fail:0 Unfinished:3959&quot;,&quot;Submitted:5547 Succ:1267 Fail:0 Unfinished:4280&quot;,&quot;Submitted:5920 Succ:1456 Fail:0 Unfinished:4464&quot;,&quot;Submitted:5920 Succ:1456 Fail:0 Unfinished:4464&quot;,&quot;Submitted:6582 Succ:1655 Fail:0 Unfinished:4927&quot;,&quot;Submitted:6582 Succ:1655 Fail:0 Unfinished:4927&quot;,&quot;Submitted:7170 Succ:1843 Fail:0 Unfinished:5327&quot;,&quot;Submitted:7486 Succ:1843 Fail:0 Unfinished:5643&quot;,&quot;Submitted:7486 Succ:1843 Fail:0 Unfinished:5643&quot;,&quot;Submitted:7984 Succ:2031 Fail:0 Unfinished:5953&quot;,&quot;Submitted:7984 Succ:2031 Fail:0 Unfinished:5953&quot;,&quot;Submitted:8537 Succ:2031 Fail:0 Unfinished:6506&quot;,&quot;Submitted:8951 Succ:2031 Fail:0 Unfinished:6920&quot;,&quot;Submitted:8951 Succ:2031 Fail:0 Unfinished:6920&quot;,&quot;Submitted:9501 Succ:2304 Fail:0 Unfinished:7197&quot;,&quot;Submitted:9866 Succ:2304 Fail:0 Unfinished:7562&quot;,&quot;Submitted:9866 Succ:2304 Fail:0 Unfinished:7562&quot;,&quot;Submitted:10000 Succ:2470 Fail:0 Unfinished:7530&quot;,&quot;Submitted:10000 Succ:2754 Fail:0 Unfinished:7246&quot;,&quot;Submitted:10000 Succ:2754 Fail:0 Unfinished:7246&quot;,&quot;Submitted:10000 Succ:3127 Fail:0 Unfinished:6873&quot;,&quot;Submitted:10000 Succ:3127 Fail:0 Unfinished:6873&quot;,&quot;Submitted:10000 Succ:3351 Fail:0 Unfinished:6649&quot;,&quot;Submitted:10000 Succ:3575 Fail:0 Unfinished:6425&quot;,&quot;Submitted:10000 Succ:3742 Fail:0 Unfinished:6258&quot;,&quot;Submitted:10000 Succ:4018 Fail:0 Unfinished:5982&quot;,&quot;Submitted:10000 Succ:4140 Fail:0 Unfinished:5860&quot;,&quot;Submitted:10000 Succ:4520 Fail:0 Unfinished:5480&quot;,&quot;Submitted:10000 Succ:9861 Fail:0 Unfinished:139&quot;,&quot;Submitted:10000 Succ:10000 Fail:0 Unfinished:0&quot;,&quot;Submitted:10000 Succ:10000 Fail:0 Unfinished:0&quot;,&quot;Submitted:10000 Succ:10000 Fail:0 Unfinished:0&quot;,&quot;Submitted:10000 Succ:10000 Fail:0 Unfinished:0&quot;,&quot;Submitted:10000 Succ:10000 Fail:0 Unfinished:0&quot;,&quot;Submitted:10000 Succ:10000 Fail:0 Unfinished:0&quot;,&quot;Submitted:10000 Succ:10000 Fail:0 Unfinished:0&quot;,&quot;Submitted:10313 Succ:10000 Fail:0 Unfinished:313&quot;,&quot;Submitted:10630 Succ:10000 Fail:0 Unfinished:630&quot;,&quot;Submitted:10986 Succ:10218 Fail:0 Unfinished:768&quot;,&quot;Submitted:10986 Succ:10218 Fail:0 Unfinished:768&quot;,&quot;Submitted:11430 Succ:10218 Fail:0 Unfinished:1212&quot;,&quot;Submitted:11803 Succ:10449 Fail:0 Unfinished:1354&quot;,&quot;Submitted:11803 Succ:10449 Fail:0 Unfinished:1354&quot;,&quot;Submitted:12336 Succ:10630 Fail:0 Unfinished:1706&quot;,&quot;Submitted:12921 Succ:10630 Fail:0 Unfinished:2291&quot;,&quot;Submitted:12921 Succ:10630 Fail:0 Unfinished:2291&quot;,&quot;Submitted:13478 Succ:10986 Fail:0 Unfinished:2492&quot;,&quot;Submitted:13478 Succ:10986 Fail:0 Unfinished:2492&quot;,&quot;Submitted:14023 Succ:11251 Fail:0 Unfinished:2772&quot;,&quot;Submitted:14023 Succ:11251 Fail:0 Unfinished:2772&quot;,&quot;Submitted:14632 Succ:11477 Fail:0 Unfinished:3155&quot;,&quot;Submitted:14632 Succ:11477 Fail:0 Unfinished:3155&quot;,&quot;Submitted:15202 Succ:11477 Fail:0 Unfinished:3725&quot;,&quot;Submitted:15202 Succ:11477 Fail:0 Unfinished:3725&quot;,&quot;Submitted:15756 Succ:11813 Fail:0 Unfinished:3943&quot;,&quot;Submitted:16298 Succ:11972 Fail:0 Unfinished:4326&quot;,&quot;Submitted:16298 Succ:11972 Fail:0 Unfinished:4326&quot;,&quot;Submitted:16634 Succ:11972 Fail:0 Unfinished:4662&quot;,&quot;Submitted:17169 Succ:12218 Fail:0 Unfinished:4951&quot;,&quot;Submitted:17492 Succ:12218 Fail:0 Unfinished:5274&quot;,&quot;Submitted:17492 Succ:12218 Fail:0 Unfinished:5274&quot;,&quot;Submitted:18099 Succ:12456 Fail:0 Unfinished:5643&quot;,&quot;Submitted:18099 Succ:12456 Fail:0 Unfinished:5643&quot;,&quot;Submitted:18502 Succ:12621 Fail:0 Unfinished:5881&quot;,&quot;Submitted:18502 Succ:12621 Fail:0 Unfinished:5881&quot;,&quot;Submitted:19086 Succ:12621 Fail:0 Unfinished:6465&quot;,&quot;Submitted:19499 Succ:12621 Fail:0 Unfinished:6878&quot;,&quot;Submitted:19840 Succ:12994 Fail:0 Unfinished:6846&quot;,&quot;Submitted:20000 Succ:12994 Fail:0 Unfinished:7006&quot;,&quot;Submitted:20000 Succ:12994 Fail:0 Unfinished:7006&quot;,&quot;Submitted:20000 Succ:13510 Fail:0 Unfinished:6490&quot;,&quot;Submitted:20000 Succ:13510 Fail:0 Unfinished:6490&quot;,&quot;Submitted:20000 Succ:13764 Fail:0 Unfinished:6236&quot;,&quot;Submitted:20000 Succ:13764 Fail:0 Unfinished:6236&quot;,&quot;Submitted:20000 Succ:14159 Fail:0 Unfinished:5841&quot;,&quot;Submitted:20000 Succ:14159 Fail:0 Unfinished:5841&quot;,&quot;Submitted:20000 Succ:14559 Fail:0 Unfinished:5441&quot;,&quot;Submitted:20000 Succ:19701 Fail:0 Unfinished:299&quot;]}</td>
+                </tr>
+            </table>
+            <strong class="tag">resource consumption</strong>
+            <table>
+                <tr>
+                     <th>TYPE</th> <th>NAME</th> <th>Memory(max)</th> <th>Memory(avg)</th> <th>CPU(max)</th> <th>CPU(avg)</th> <th>Traffic In</th> <th>Traffic Out</th>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>dev-peer0.org1.example.co...nk-v0</td> <td>10.6MB</td> <td>10.5MB</td> <td>9.36%</td> <td>6.22%</td> <td>16.3MB</td> <td>7.1MB</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>peer0.org1.example.com</td> <td>504.6MB</td> <td>384.5MB</td> <td>155.46%</td> <td>95.55%</td> <td>47.7MB</td> <td>57.2MB</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>orderer.example.com</td> <td>126.1MB</td> <td>109.5MB</td> <td>74.88%</td> <td>40.95%</td> <td>31.2MB</td> <td>32.1MB</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>ca_peerOrg1</td> <td>4.3MB</td> <td>4.3MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>simplenetwork_ca_1</td> <td>4.2MB</td> <td>4.2MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>ca_peerOrg2</td> <td>4.2MB</td> <td>4.2MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>simplenetwork_peer_1</td> <td>0B</td> <td>0B</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>-</td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <h3>Test Environment</h3>
+            <strong class="tag">benchmark config</strong>
+            <pre id="benchmarkInfo">{
+  &quot;name&quot;: &quot;smallbank&quot;,
+  &quot;description&quot;: &quot;This is smallbank benchmark for caliper&quot;,
+  &quot;clients&quot;: {
+    &quot;type&quot;: &quot;local&quot;,
+    &quot;number&quot;: 1
+  },
+  &quot;rounds&quot;: [
+    {
+      &quot;label&quot;: &quot;smallOperations&quot;,
+      &quot;txNumber&quot;: [
+        10000
+      ],
+      &quot;rateControl&quot;: [
+        {
+          &quot;type&quot;: &quot;fixed-rate&quot;,
+          &quot;opts&quot;: {
+            &quot;tps&quot;: 300
+          }
+        }
+      ],
+      &quot;arguments&quot;: {
+        &quot;accounts&quot;: 10000,
+        &quot;txnPerBatch&quot;: 10
+      },
+      &quot;callback&quot;: &quot;benchmark&#x2F;smallbank&#x2F;smallbankOperations-createNAcc.js&quot;
+    },
+    {
+      &quot;label&quot;: &quot;smallOperations&quot;,
+      &quot;txNumber&quot;: [
+        10000
+      ],
+      &quot;rateControl&quot;: [
+        {
+          &quot;type&quot;: &quot;fixed-rate&quot;,
+          &quot;opts&quot;: {
+            &quot;tps&quot;: 300
+          }
+        }
+      ],
+      &quot;arguments&quot;: {
+        &quot;accounts&quot;: 10000,
+        &quot;txnPerBatch&quot;: 10
+      },
+      &quot;callback&quot;: &quot;benchmark&#x2F;smallbank&#x2F;smallbankOperations-createNTx.js&quot;
+    }
+  ]
+}</pre>
+            <strong class="tag">SUT</strong>
+            <pre id="sutdetails">not provided</pre>
+        </div>
+    </div>
+
+
+</main>
+
+</body>
+</html>
