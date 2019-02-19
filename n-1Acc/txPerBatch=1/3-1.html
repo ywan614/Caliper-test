@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+<head>
+    <title>Caliper Report</title>
+    <meta charset="UTF-8"/>
+    <style type="text/css">
+        .left-column {
+            position: fixed;
+            width:20%;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -khtml-border-radius: 5px;
+        }
+        .right-column {
+            margin-left: 22%;
+            width:60%;
+        }
+        .left-column ul,h2 {
+            display: block;
+            margin: 10px;
+            padding: 0;
+            list-style: none;
+        }
+        .left-column ul{
+            border-top: 1px solid #d9d9d9;
+            font-size: 14px;
+        }
+        .left-column li{
+            margin-bottom: 5px;
+            color: #5e6b73;
+        }
+        .left-column h3 {
+            border-left: 5px solid #009a61;
+        }
+        .right-column>div {
+            border-top: 1px solid #d9d9d9;
+        }
+        .right-column table {
+            font-family: verdana,arial,sans-serif;
+            font-size:11px;
+            color:#333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        .right-column th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #f2f2f2;
+        }
+        .right-column td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+        }
+        .tag {
+            display: inline-block;
+            margin-bottom: 10px;
+            padding: 5px 10px;
+            background-color: rgba(1,126,102,0.08);
+            font-family: verdana,arial,sans-serif;
+            font-size:11px;
+            color: #017E66;
+            text-align: center;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -khtml-border-radius: 5px;
+        }
+        pre {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -khtml-border-radius: 5px;
+            overflow:auto;
+            max-height:300px;
+            font-size:12px;
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <div class="left-column">
+        <h2>Caliper Report</h2>
+        <ul>
+            <h3>&nbspBasic information</h3>
+            <li><strong>DLT: &nbsp</strong><span>fabric</span></li>
+            <li><strong>Benchmark: &nbsp</strong><span>smallbank</span></li>
+            <li><strong>Description: &nbsp</strong><span>This is smallbank benchmark for caliper</span></li>
+            <li><strong>Test Rounds: &nbsp</strong><span>2</span></li>
+            <li><a href="#benchmarkInfo">Details</a></li>
+        </ul>
+        <ul>
+            <h3>&nbspBenchmark results</h3>
+            <li><a href="#benchmarksummary">Summary</a></li>
+            <li><a href="#round 0">round 0</a></li>
+            <li><a href="#round 1">round 1</a></li>
+        </ul>
+        <ul>
+            <h3>&nbspSystem Under Test</h3>
+            <li><strong>Version: &nbsp</strong><span>1.0.5</span></li>
+            <li><strong>Size: &nbsp</strong><span>4 Peers</span></li>
+            <li><strong>Orderer: &nbsp</strong><span>Solo</span></li>
+            <li><strong>Distribution: &nbsp</strong><span>Single Host</span></li>
+            <li><a href="#sutdetails">Details</a></li>
+        </ul>
+    </div>
+
+    <div class="right-column">
+        <div id="benchmarksummary">
+            <table>
+                <h3>Summary</h3>
+                <tr>
+                     <th>Test</th> <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate</th> <th>Max Latency</th> <th>Min Latency</th> <th>Avg Latency</th> <th>Throughput</th> <th>Details</th>
+                </tr>
+
+                <tr>
+                     <td>1</td> <td>smallOperations</td> <td>1</td> <td>0</td> <td>1 tps</td> <td>1.04 s</td> <td>1.04 s</td> <td>1.04 s</td> <td>1 tps</td> <td>{&quot;trans&quot;:[&quot;Submitted:0 Succ:0 Fail:0 Unfinished:0&quot;,&quot;Submitted:0 Succ:0 Fail:0 Unfinished:0&quot;,&quot;Submitted:1 Succ:0 Fail:0 Unfinished:1&quot;,&quot;Submitted:1 Succ:1 Fail:0 Unfinished:0&quot;]}</td>
+                </tr>
+                <tr>
+                     <td>2</td> <td>smallOperations</td> <td>49</td> <td>4951</td> <td>100 tps</td> <td>1.55 s</td> <td>0.93 s</td> <td>1.08 s</td> <td>1 tps</td> <td>{&quot;trans&quot;:[&quot;Submitted:0 Succ:0 Fail:0 Unfinished:0&quot;,&quot;Submitted:0 Succ:0 Fail:0 Unfinished:0&quot;,&quot;Submitted:1 Succ:0 Fail:0 Unfinished:1&quot;,&quot;Submitted:1 Succ:1 Fail:0 Unfinished:0&quot;,&quot;Submitted:1 Succ:1 Fail:0 Unfinished:0&quot;,&quot;Submitted:1 Succ:1 Fail:0 Unfinished:0&quot;,&quot;Submitted:1 Succ:1 Fail:0 Unfinished:0&quot;,&quot;Submitted:1 Succ:1 Fail:0 Unfinished:0&quot;,&quot;Submitted:1 Succ:1 Fail:0 Unfinished:0&quot;,&quot;Submitted:1 Succ:1 Fail:0 Unfinished:0&quot;,&quot;Submitted:96 Succ:1 Fail:0 Unfinished:95&quot;,&quot;Submitted:197 Succ:2 Fail:102 Unfinished:93&quot;,&quot;Submitted:297 Succ:3 Fail:203 Unfinished:91&quot;,&quot;Submitted:397 Succ:4 Fail:303 Unfinished:90&quot;,&quot;Submitted:497 Succ:5 Fail:403 Unfinished:89&quot;,&quot;Submitted:597 Succ:6 Fail:504 Unfinished:87&quot;,&quot;Submitted:697 Succ:7 Fail:604 Unfinished:86&quot;,&quot;Submitted:797 Succ:8 Fail:704 Unfinished:85&quot;,&quot;Submitted:897 Succ:9 Fail:806 Unfinished:82&quot;,&quot;Submitted:997 Succ:10 Fail:907 Unfinished:80&quot;,&quot;Submitted:1098 Succ:11 Fail:1008 Unfinished:79&quot;,&quot;Submitted:1197 Succ:12 Fail:1108 Unfinished:77&quot;,&quot;Submitted:1297 Succ:13 Fail:1209 Unfinished:75&quot;,&quot;Submitted:1398 Succ:14 Fail:1309 Unfinished:75&quot;,&quot;Submitted:1498 Succ:15 Fail:1410 Unfinished:73&quot;,&quot;Submitted:1599 Succ:16 Fail:1510 Unfinished:73&quot;,&quot;Submitted:1698 Succ:17 Fail:1609 Unfinished:72&quot;,&quot;Submitted:1799 Succ:18 Fail:1710 Unfinished:71&quot;,&quot;Submitted:1899 Succ:19 Fail:1810 Unfinished:70&quot;,&quot;Submitted:2013 Succ:19 Fail:1810 Unfinished:184&quot;,&quot;Submitted:2123 Succ:21 Fail:1969 Unfinished:133&quot;,&quot;Submitted:2225 Succ:22 Fail:2099 Unfinished:104&quot;,&quot;Submitted:2324 Succ:23 Fail:2257 Unfinished:44&quot;,&quot;Submitted:2428 Succ:24 Fail:2358 Unfinished:46&quot;,&quot;Submitted:2528 Succ:25 Fail:2458 Unfinished:45&quot;,&quot;Submitted:2628 Succ:26 Fail:2560 Unfinished:42&quot;,&quot;Submitted:2728 Succ:27 Fail:2660 Unfinished:41&quot;,&quot;Submitted:2828 Succ:28 Fail:2760 Unfinished:40&quot;,&quot;Submitted:2928 Succ:29 Fail:2863 Unfinished:36&quot;,&quot;Submitted:3028 Succ:30 Fail:2964 Unfinished:34&quot;,&quot;Submitted:3128 Succ:31 Fail:3063 Unfinished:34&quot;,&quot;Submitted:3228 Succ:32 Fail:3163 Unfinished:33&quot;,&quot;Submitted:3328 Succ:33 Fail:3266 Unfinished:29&quot;,&quot;Submitted:3429 Succ:34 Fail:3367 Unfinished:28&quot;,&quot;Submitted:3531 Succ:35 Fail:3466 Unfinished:30&quot;,&quot;Submitted:3630 Succ:35 Fail:3466 Unfinished:129&quot;,&quot;Submitted:3730 Succ:37 Fail:3669 Unfinished:24&quot;,&quot;Submitted:3833 Succ:38 Fail:3770 Unfinished:25&quot;,&quot;Submitted:3932 Succ:39 Fail:3869 Unfinished:24&quot;,&quot;Submitted:4032 Succ:40 Fail:3971 Unfinished:21&quot;,&quot;Submitted:4132 Succ:40 Fail:3971 Unfinished:121&quot;,&quot;Submitted:4234 Succ:42 Fail:4172 Unfinished:20&quot;,&quot;Submitted:4334 Succ:42 Fail:4172 Unfinished:120&quot;,&quot;Submitted:4434 Succ:43 Fail:4271 Unfinished:120&quot;,&quot;Submitted:4534 Succ:44 Fail:4373 Unfinished:117&quot;,&quot;Submitted:4635 Succ:45 Fail:4475 Unfinished:115&quot;,&quot;Submitted:4734 Succ:46 Fail:4575 Unfinished:113&quot;,&quot;Submitted:4834 Succ:47 Fail:4676 Unfinished:111&quot;,&quot;Submitted:4934 Succ:48 Fail:4778 Unfinished:108&quot;,&quot;Submitted:5001 Succ:49 Fail:4879 Unfinished:73&quot;,&quot;Submitted:5001 Succ:50 Fail:4951 Unfinished:0&quot;]}</td>
+                </tr>
+            </table>
+        </div>
+        <div id="round 0">
+            <h3>round 0&nbsp-&nbspsmallOperations</h3>
+            <strong class="tag">performance metrics</strong>
+            <table>
+                <tr>
+                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate</th> <th>Max Latency</th> <th>Min Latency</th> <th>Avg Latency</th> <th>Throughput</th> <th>Details</th>
+                </tr>
+                <tr>
+                     <td>smallOperations</td> <td>1</td> <td>0</td> <td>1 tps</td> <td>1.04 s</td> <td>1.04 s</td> <td>1.04 s</td> <td>1 tps</td> <td>{&quot;trans&quot;:[&quot;Submitted:0 Succ:0 Fail:0 Unfinished:0&quot;,&quot;Submitted:0 Succ:0 Fail:0 Unfinished:0&quot;,&quot;Submitted:1 Succ:0 Fail:0 Unfinished:1&quot;,&quot;Submitted:1 Succ:1 Fail:0 Unfinished:0&quot;]}</td>
+                </tr>
+            </table>
+            <strong class="tag">resource consumption</strong>
+            <table>
+                <tr>
+                     <th>TYPE</th> <th>NAME</th> <th>Memory(max)</th> <th>Memory(avg)</th> <th>CPU(max)</th> <th>CPU(avg)</th> <th>Traffic In</th> <th>Traffic Out</th>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>dev-peer0.org1.example.co...nk-v0</td> <td>2.7MB</td> <td>2.7MB</td> <td>0.07%</td> <td>0.03%</td> <td>1.8KB</td> <td>780B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>peer0.org1.example.com</td> <td>20.6MB</td> <td>20.4MB</td> <td>3.53%</td> <td>1.77%</td> <td>5.7KB</td> <td>7.8KB</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>simplenetwork_ca_1</td> <td>4.1MB</td> <td>4.1MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>ca_peerOrg1</td> <td>4.2MB</td> <td>4.2MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>ca_peerOrg2</td> <td>4.2MB</td> <td>4.2MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>orderer.example.com</td> <td>12.7MB</td> <td>12.6MB</td> <td>0.42%</td> <td>0.21%</td> <td>7.6KB</td> <td>22.5KB</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>simplenetwork_peer_1</td> <td>0B</td> <td>0B</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>-</td>
+                </tr>
+            </table>
+        </div>
+        <div id="round 1">
+            <h3>round 1&nbsp-&nbspsmallOperations</h3>
+            <strong class="tag">performance metrics</strong>
+            <table>
+                <tr>
+                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate</th> <th>Max Latency</th> <th>Min Latency</th> <th>Avg Latency</th> <th>Throughput</th> <th>Details</th>
+                </tr>
+                <tr>
+                     <td>smallOperations</td> <td>49</td> <td>4951</td> <td>100 tps</td> <td>1.55 s</td> <td>0.93 s</td> <td>1.08 s</td> <td>1 tps</td> <td>{&quot;trans&quot;:[&quot;Submitted:0 Succ:0 Fail:0 Unfinished:0&quot;,&quot;Submitted:0 Succ:0 Fail:0 Unfinished:0&quot;,&quot;Submitted:1 Succ:0 Fail:0 Unfinished:1&quot;,&quot;Submitted:1 Succ:1 Fail:0 Unfinished:0&quot;,&quot;Submitted:1 Succ:1 Fail:0 Unfinished:0&quot;,&quot;Submitted:1 Succ:1 Fail:0 Unfinished:0&quot;,&quot;Submitted:1 Succ:1 Fail:0 Unfinished:0&quot;,&quot;Submitted:1 Succ:1 Fail:0 Unfinished:0&quot;,&quot;Submitted:1 Succ:1 Fail:0 Unfinished:0&quot;,&quot;Submitted:1 Succ:1 Fail:0 Unfinished:0&quot;,&quot;Submitted:96 Succ:1 Fail:0 Unfinished:95&quot;,&quot;Submitted:197 Succ:2 Fail:102 Unfinished:93&quot;,&quot;Submitted:297 Succ:3 Fail:203 Unfinished:91&quot;,&quot;Submitted:397 Succ:4 Fail:303 Unfinished:90&quot;,&quot;Submitted:497 Succ:5 Fail:403 Unfinished:89&quot;,&quot;Submitted:597 Succ:6 Fail:504 Unfinished:87&quot;,&quot;Submitted:697 Succ:7 Fail:604 Unfinished:86&quot;,&quot;Submitted:797 Succ:8 Fail:704 Unfinished:85&quot;,&quot;Submitted:897 Succ:9 Fail:806 Unfinished:82&quot;,&quot;Submitted:997 Succ:10 Fail:907 Unfinished:80&quot;,&quot;Submitted:1098 Succ:11 Fail:1008 Unfinished:79&quot;,&quot;Submitted:1197 Succ:12 Fail:1108 Unfinished:77&quot;,&quot;Submitted:1297 Succ:13 Fail:1209 Unfinished:75&quot;,&quot;Submitted:1398 Succ:14 Fail:1309 Unfinished:75&quot;,&quot;Submitted:1498 Succ:15 Fail:1410 Unfinished:73&quot;,&quot;Submitted:1599 Succ:16 Fail:1510 Unfinished:73&quot;,&quot;Submitted:1698 Succ:17 Fail:1609 Unfinished:72&quot;,&quot;Submitted:1799 Succ:18 Fail:1710 Unfinished:71&quot;,&quot;Submitted:1899 Succ:19 Fail:1810 Unfinished:70&quot;,&quot;Submitted:2013 Succ:19 Fail:1810 Unfinished:184&quot;,&quot;Submitted:2123 Succ:21 Fail:1969 Unfinished:133&quot;,&quot;Submitted:2225 Succ:22 Fail:2099 Unfinished:104&quot;,&quot;Submitted:2324 Succ:23 Fail:2257 Unfinished:44&quot;,&quot;Submitted:2428 Succ:24 Fail:2358 Unfinished:46&quot;,&quot;Submitted:2528 Succ:25 Fail:2458 Unfinished:45&quot;,&quot;Submitted:2628 Succ:26 Fail:2560 Unfinished:42&quot;,&quot;Submitted:2728 Succ:27 Fail:2660 Unfinished:41&quot;,&quot;Submitted:2828 Succ:28 Fail:2760 Unfinished:40&quot;,&quot;Submitted:2928 Succ:29 Fail:2863 Unfinished:36&quot;,&quot;Submitted:3028 Succ:30 Fail:2964 Unfinished:34&quot;,&quot;Submitted:3128 Succ:31 Fail:3063 Unfinished:34&quot;,&quot;Submitted:3228 Succ:32 Fail:3163 Unfinished:33&quot;,&quot;Submitted:3328 Succ:33 Fail:3266 Unfinished:29&quot;,&quot;Submitted:3429 Succ:34 Fail:3367 Unfinished:28&quot;,&quot;Submitted:3531 Succ:35 Fail:3466 Unfinished:30&quot;,&quot;Submitted:3630 Succ:35 Fail:3466 Unfinished:129&quot;,&quot;Submitted:3730 Succ:37 Fail:3669 Unfinished:24&quot;,&quot;Submitted:3833 Succ:38 Fail:3770 Unfinished:25&quot;,&quot;Submitted:3932 Succ:39 Fail:3869 Unfinished:24&quot;,&quot;Submitted:4032 Succ:40 Fail:3971 Unfinished:21&quot;,&quot;Submitted:4132 Succ:40 Fail:3971 Unfinished:121&quot;,&quot;Submitted:4234 Succ:42 Fail:4172 Unfinished:20&quot;,&quot;Submitted:4334 Succ:42 Fail:4172 Unfinished:120&quot;,&quot;Submitted:4434 Succ:43 Fail:4271 Unfinished:120&quot;,&quot;Submitted:4534 Succ:44 Fail:4373 Unfinished:117&quot;,&quot;Submitted:4635 Succ:45 Fail:4475 Unfinished:115&quot;,&quot;Submitted:4734 Succ:46 Fail:4575 Unfinished:113&quot;,&quot;Submitted:4834 Succ:47 Fail:4676 Unfinished:111&quot;,&quot;Submitted:4934 Succ:48 Fail:4778 Unfinished:108&quot;,&quot;Submitted:5001 Succ:49 Fail:4879 Unfinished:73&quot;,&quot;Submitted:5001 Succ:50 Fail:4951 Unfinished:0&quot;]}</td>
+                </tr>
+            </table>
+            <strong class="tag">resource consumption</strong>
+            <table>
+                <tr>
+                     <th>TYPE</th> <th>NAME</th> <th>Memory(max)</th> <th>Memory(avg)</th> <th>CPU(max)</th> <th>CPU(avg)</th> <th>Traffic In</th> <th>Traffic Out</th>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>dev-peer0.org1.example.co...nk-v0</td> <td>5.6MB</td> <td>5.3MB</td> <td>15.67%</td> <td>11.36%</td> <td>8.3MB</td> <td>3.8MB</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>peer0.org1.example.com</td> <td>138.9MB</td> <td>93.2MB</td> <td>90.80%</td> <td>65.80%</td> <td>25.3MB</td> <td>29.2MB</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>simplenetwork_ca_1</td> <td>4.1MB</td> <td>4.1MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>ca_peerOrg1</td> <td>4.2MB</td> <td>4.2MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>ca_peerOrg2</td> <td>4.2MB</td> <td>4.2MB</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>0B</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>orderer.example.com</td> <td>41.8MB</td> <td>32.0MB</td> <td>48.08%</td> <td>31.61%</td> <td>16.8MB</td> <td>17.0MB</td>
+                </tr>
+                <tr>
+                     <td>Docker</td> <td>simplenetwork_peer_1</td> <td>0B</td> <td>0B</td> <td>0.00%</td> <td>0.00%</td> <td>0B</td> <td>-</td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <h3>Test Environment</h3>
+            <strong class="tag">benchmark config</strong>
+            <pre id="benchmarkInfo">{
+  &quot;name&quot;: &quot;smallbank&quot;,
+  &quot;description&quot;: &quot;This is smallbank benchmark for caliper&quot;,
+  &quot;clients&quot;: {
+    &quot;type&quot;: &quot;local&quot;,
+    &quot;number&quot;: 1
+  },
+  &quot;rounds&quot;: [
+    {
+      &quot;label&quot;: &quot;smallOperations&quot;,
+      &quot;txNumber&quot;: [
+        1
+      ],
+      &quot;rateControl&quot;: [
+        {
+          &quot;type&quot;: &quot;fixed-rate&quot;,
+          &quot;opts&quot;: {
+            &quot;tps&quot;: 1
+          }
+        }
+      ],
+      &quot;arguments&quot;: {
+        &quot;accounts&quot;: 4,
+        &quot;txnPerBatch&quot;: 1
+      },
+      &quot;callback&quot;: &quot;benchmark&#x2F;smallbank&#x2F;smallbankOperations-createAcc.js&quot;
+    },
+    {
+      &quot;label&quot;: &quot;smallOperations&quot;,
+      &quot;txNumber&quot;: [
+        5000
+      ],
+      &quot;rateControl&quot;: [
+        {
+          &quot;type&quot;: &quot;fixed-rate&quot;,
+          &quot;opts&quot;: {
+            &quot;tps&quot;: 100
+          }
+        }
+      ],
+      &quot;arguments&quot;: {
+        &quot;accounts&quot;: 4,
+        &quot;txnPerBatch&quot;: 1
+      },
+      &quot;callback&quot;: &quot;benchmark&#x2F;smallbank&#x2F;smallbankOperations-createTx.js&quot;
+    }
+  ]
+}</pre>
+            <strong class="tag">SUT</strong>
+            <pre id="sutdetails">not provided</pre>
+        </div>
+    </div>
+
+
+</main>
+
+</body>
+</html>
